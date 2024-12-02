@@ -1,0 +1,219 @@
+/* Global Styles */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f50057;
+    --background-gradient: linear-gradient(135deg, #667eea, #764ba2, #6B8DD6);
+    --text-primary: #2c3e50;
+    --text-secondary: #34495e;
+    --white: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --shadow-soft: 0 8px 30px rgba(0,0,0,0.12);
+    --shadow-strong: 0 12px 40px rgba(0,0,0,0.15);
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Inter', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('../images/qcity.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
+}
+
+/* Navigation Bar */
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 0 30px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    height: 80px;
+}
+
+.logo img {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--transition-speed);
+}
+
+.navbar-text {
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-right: 4rem;
+    letter-spacing: 0.5px;
+}
+
+/* Login Container */
+.background-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: var(--shadow-strong);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.login-container h2 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    font-size: 1rem;
+    transition: all var(--transition-speed);
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.login-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.login-container button:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+.login-container p {
+    margin: 15px 0 0;
+    color: var(--white);
+}
+
+.login-container a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+
+.login-container a:hover {
+    color: var(--secondary-color);
+}
+
+.error-message {
+    background: rgba(244, 67, 54, 0.1);
+    color: #ff5252;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--white);
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .logo img {
+        height: 150px;
+    }
+
+    .navbar-text {
+        font-size: 0.9rem;
+        margin-right: 1rem;
+    }
+
+    .login-container {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        height: 60px;
+    }
+
+    .logo img {
+        height: 120px;
+    }
+
+    .navbar-text {
+        display: none;
+    }
+
+    .login-container h2 {
+        font-size: 1.5rem;
+    }
+}

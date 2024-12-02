@@ -1,0 +1,16 @@
+CREATE TABLE users (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    profile_picture VARCHAR(255) DEFAULT NULL,
+    contact_details VARCHAR(255) DEFAULT NULL,
+    home_address TEXT DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    student_number VARCHAR(50) NOT NULL,
+    INDEX(email),
+    INDEX(username),
+    INDEX(student_number)
+);
